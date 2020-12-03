@@ -3,10 +3,14 @@ package dev.developintelligence.vmware.vmwaretravel
 import android.content.DialogInterface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import dev.developintelligence.vmware.vmwaretravel.providers.TripsStore
+import java.text.ParseException
+import java.text.SimpleDateFormat
+import java.util.*
 
 class TripsDetailsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,8 +23,15 @@ class TripsDetailsActivity : AppCompatActivity() {
         if (index>=0) {
             val trip = TripsStore.instance.trips[index]
             title = trip.name
-            findViewById<TextView>(R.id.textNoteDescription).setText(trip.description)
-
+            findViewById<TextView>(R.id.textNoteDescription).text = (trip.description)
+            if(!trip.startDate.isEmpty()){
+                findViewById<TextView>(R.id.displayDurationDetails).text =
+                        getTimeline(trip.startDate, trip.duration)
+            }
+            else{
+                findViewById<TextView>(R.id.textDurationDetails).visibility = View.GONE;
+                findViewById<TextView>(R.id.displayDurationDetails).visibility = View.GONE;
+            }
             findViewById<Button>(R.id.buttonDelete).setOnClickListener {
                 AlertDialog.Builder(this)
                         .setTitle("Delete a Trip")
@@ -36,5 +47,20 @@ class TripsDetailsActivity : AppCompatActivity() {
             }
         }
 
+    }
+    // Gets the trip timeline (start - end)
+    private fun getTimeline(startdate: String, duration:Int) : String {
+        // Convert string date -> Date object for calendar
+        var df : SimpleDateFormat = SimpleDateFormat("mm/dd/yyyy");
+        var cal: Calendar = Calendar.getInstance();
+        try{
+            cal.time = df.parse(startdate)
+        } catch(e: ParseException) {
+            e.printStackTrace()
+        }
+        cal.add(Calendar.DATE, duration)
+        // Convert new date to string
+        val endDate : String = df.format(cal.time)
+        return String.format("$startdate to $endDate")
     }
 }

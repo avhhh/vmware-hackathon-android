@@ -58,7 +58,9 @@ class TripsStore {
             for (i in 0 until jsonArray.length()) {
                 val tripJSON = jsonArray.getJSONObject(i)
                 val trip = Trip(tripJSON.getString("name"),
-                        tripJSON.getString("description"))
+                        tripJSON.getString("description"),
+                        tripJSON.getString("startDate"),
+                        tripJSON.getInt("duration"))
                 trips.add(trip)
             }
         } catch (e: Exception) {

@@ -48,7 +48,7 @@
         android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="Password"
-        android:inputType="textPersonName"
+        android:inputType="textPassword"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editUsername" />
 
@@ -69,7 +69,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Login"
+        android:backgroundTint="@color/purple_button"
+        android:text="@string/login_button"
         app:layout_constraintStart_toStartOf="@+id/editPassword"
         app:layout_constraintTop_toBottomOf="@+id/editPassword" />
 
@@ -80,7 +81,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginBottom="16dp"
-        android:text="I forgot my credentials"
+        android:text="@string/credential_forget"
         android:textColor="#B6B2B2"
         android:textSize="10dp"
         app:layout_constraintBottom_toBottomOf="parent"

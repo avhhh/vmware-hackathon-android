@@ -9,9 +9,9 @@ import java.net.URLEncoder
 
 class WeatherAPI {
 
-    fun getWeather(context: Context, callback: (Weather?) -> Unit) {
+    fun getWeather(city: String, context: Context, callback: (Weather?) -> Unit) {
         // We need to convert spaces and special characters into a URL-valid format
-        var cityName = "Palo Alto"
+        var cityName = city
         cityName = URLEncoder.encode(cityName, "utf-8")
 
         val url =

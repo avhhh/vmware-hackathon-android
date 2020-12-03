@@ -14,7 +14,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="40dp"
         android:text="Description"
-        android:textColor="#959595"
+        android:textColor="@color/trip_details_text"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editNameTrip" />
 
@@ -25,7 +25,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="28dp"
         android:text="Name of the Trip"
-        android:textColor="#959595"
+        android:textColor="@color/trip_details_text"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -36,7 +36,7 @@
         android:layout_marginStart="24dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:hint="Name"
         android:textColor="#959595"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
@@ -57,8 +57,55 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="128dp"
+        android:backgroundTint="@color/purple_button"
         android:text="Save"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editDescription" />
+
+    <TextView
+        android:id="@+id/textStartDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="28dp"
+        android:text="Start Date"
+        android:textColor="@color/trip_details_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editDescription" />
+
+    <EditText
+        android:id="@+id/editStartDate"
+        android:layout_width="136dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="44dp"
+        android:ems="10"
+        android:hint="MM/DD/YYYY"
+        android:inputType="date"
+        android:textColor="@color/trip_details_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editDescription" />
+
+    <TextView
+        android:id="@+id/textTripDuration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="164dp"
+        android:layout_marginTop="28dp"
+        android:text="Duration"
+        android:textColor="@color/trip_details_text"
+        app:layout_constraintStart_toEndOf="@+id/textStartDate"
+        app:layout_constraintTop_toBottomOf="@+id/editDescription" />
+
+    <EditText
+        android:id="@+id/editTripDuration"
+        android:layout_width="110dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="44dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintStart_toEndOf="@+id/editStartDate"
         app:layout_constraintTop_toBottomOf="@+id/editDescription" />
 </androidx.constraintlayout.widget.ConstraintLayout>

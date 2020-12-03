@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">vmwareTravel</string>
+    <string name="login_button">Login</string>
+    <string name="credential_forget">I forgot my credentials</string>
+    <string name="trip_button">My Trips</string>
+    <string name="weather_button">Weather</string>
+    <string name="logout_button">Log Out</string>
+    <string name="search_button">Search</string>
 </resources>
