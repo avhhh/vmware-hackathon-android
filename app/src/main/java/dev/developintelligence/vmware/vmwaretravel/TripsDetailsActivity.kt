@@ -51,7 +51,7 @@ class TripsDetailsActivity : AppCompatActivity() {
     // Gets the trip timeline (start - end)
     private fun getTimeline(startdate: String, duration:Int) : String {
         // Convert string date -> Date object for calendar
-        var df : SimpleDateFormat = SimpleDateFormat("mm/dd/yyyy");
+        var df : SimpleDateFormat = SimpleDateFormat("MM/dd/yyyy");
         var cal: Calendar = Calendar.getInstance();
         try{
             cal.time = df.parse(startdate)
